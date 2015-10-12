@@ -1,0 +1,101 @@
+/**
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    contenteditable attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that are clearfixed.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf {
+    *zoom: 1;
+}
+
+body {
+  font-size:18px;
+  font-family: 'Rock Salt', cursive;
+}
+
+h1 {
+  text-align:center;
+  margin:0;
+}
+
+.cell p {
+  font-size: 2.45em;
+  text-align: center;
+  vertical-align: middle;
+  margin:0;
+}
+
+div.container {
+  float:none;
+  margin:0 auto;
+}
+
+/*.score-board p{
+  text-align:center;
+}*/
+
+
+div.grid-container {
+  width:306px;
+  height:auto;
+  text-align:center;
+  float:left;
+  margin-left: 135px;
+}
+
+.grid-container div {
+  width:100px;
+  height:100px;
+  float:left;
+  /*margin: 0 auto;*/
+  border:1px black solid;
+}
+
+div.newRow {
+  clear:left;
+}
+
+div.win {
+  margin:0 auto;
+  width:300px;
+}
+
+div.score-board   {
+  float:left;
+  margin-left: 200px;
+  vertical-align: top;
+}
+
+.score-board div{
+  border:1px solid black;
+  width:70px;
+  height:85px;
+  float:left;
+}
+
+div.score-header {
+  float:left;
+}
+
+.score-board p , p#message {
+  text-align: center;
+  font-size: 1.5em;
+  margin: 10px 0;
+}

@@ -14,6 +14,7 @@
 <body ng-controller="TicTacToeController as ticTacToe">
 <h1>TicTacToe</h2>
 
+
 <div class ="grid-container">
 
   <div ng-repeat="i in ticTacToe.getNumber(9) track by $index" class='cell' id="$index" ng-click="ticTacToe.assignMove($index)">
@@ -21,6 +22,15 @@
       <p ng-if="ticTacToe.oMoves.indexOf($index)!==-1">o</p>
   </div>
 
+</div>
+
+<div class="results-box">
+  <p ng-if="ticTacToe.checkWin(ticTacToe.xMoves)==='winner'">
+    X WINS!
+  </p>
+  <p ng-if="ticTacToe.checkWin(ticTacToe.oMoves)==='winner'">
+    O WINS!
+  </p>
 </div>
   
 </body>

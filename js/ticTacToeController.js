@@ -15,9 +15,25 @@ angular.module('ticTacToeApp')
     this.xMoves = [];
     this.oMoves = [];
 
-    this.insertMark = function() {
-      console.log('mark')
-      this.mark=true
+    this.winner = '';
+
+    this.checkWin = function(movesArray){
+      // loop over the array of winning combinations
+      for (i = 0; i < this.winningCombinations.length; i++) {
+        // if winCounter === 3 that means all 3 moves are winning combos and game is over!
+        // reset the winCounter each time!
+        winCounter = 0;
+        // loop over each individual array
+        for (var j = 0; j < this.winningCombinations[i].length; j++) {
+          // if the number in winning combo array is === a number in moves array, add to winCounter
+          if(movesArray.indexOf(this.winningCombinations[i][j]) !== -1){
+            winCounter++;
+          }
+          if(winCounter === 3){
+            return('winner')
+          }
+        }
+      }
     }
 
     this.assignMove = function(index){
@@ -31,7 +47,5 @@ angular.module('ticTacToeApp')
         this.playerMove='x'
       }
     }
-
-    this.mark = false
 
   }

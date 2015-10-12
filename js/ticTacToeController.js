@@ -15,6 +15,11 @@ angular.module('ticTacToeApp')
     this.xMoves = [];
     this.oMoves = [];
 
+    this.startOver = function() {
+      this.xMoves = [];
+      this.oMoves = [];
+    }
+
     this.winner = '';
 
     this.checkWin = function(movesArray){
@@ -30,21 +35,25 @@ angular.module('ticTacToeApp')
             winCounter++;
           }
           if(winCounter === 3){
-            return('winner')
+
+            return(true)
           }
         }
       }
     }
 
     this.assignMove = function(index){
-      console.log('assignmove')
-      if (this.playerMove==='x') {
-        this.xMoves.push(index)
-        this.playerMove='o'
-      }
-      else if (this.playerMove==='o') {
-        this.oMoves.push(index)
-        this.playerMove='x'
+      if ((this.checkWin(this.xMoves)||this.checkWin(this.oMoves))!==true) {
+
+        console.log('assignmove')
+        if (this.playerMove==='x') {
+          this.xMoves.push(index)
+          this.playerMove='o'
+        }
+        else if (this.playerMove==='o') {
+          this.oMoves.push(index)
+          this.playerMove='x'
+        }
       }
     }
 

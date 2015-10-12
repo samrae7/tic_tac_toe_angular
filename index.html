@@ -12,7 +12,11 @@
 </head>
 
 <body ng-controller="TicTacToeController as ticTacToe">
-<h1>TicTacToe</h2>
+<h1>TicTacToe</h1>
+
+<div class='start-button-holder'>
+  <button ng-click="ticTacToe.startOver()">Start again</button>
+</div>
 
 
 <div class ="grid-container">
@@ -25,10 +29,10 @@
 </div>
 
 <div class="results-box">
-  <p ng-if="ticTacToe.checkWin(ticTacToe.xMoves)==='winner'">
+  <p ng-if="ticTacToe.checkWin(ticTacToe.xMoves)===true">
     X WINS!
   </p>
-  <p ng-if="ticTacToe.checkWin(ticTacToe.oMoves)==='winner'">
+  <p ng-if="ticTacToe.checkWin(ticTacToe.oMoves)===true">
     O WINS!
   </p>
 </div>

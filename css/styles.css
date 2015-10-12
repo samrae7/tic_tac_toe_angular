@@ -108,3 +108,7 @@ div.results-box {
 .results-box p {
   font-size: 1.8em;
 }
+
+div.start-button-holder {
+  text-align: center;
+}

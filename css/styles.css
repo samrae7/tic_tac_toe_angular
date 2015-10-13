@@ -50,6 +50,9 @@ div.container {
 /*.score-board p{
   text-align:center;
 }*/
+div.page-wrapper {
+  padding: 0 480px;
+}
 
 
 div.grid-container {
@@ -57,7 +60,7 @@ div.grid-container {
   height:auto;
   text-align:center;
   float:left;
-  margin-left: 300px;
+/*  margin-left: 300px;*/
 
 }
 

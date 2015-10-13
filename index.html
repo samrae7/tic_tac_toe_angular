@@ -12,30 +12,36 @@
 </head>
 
 <body ng-controller="TicTacToeController as ticTacToe">
-<h1>TicTacToe</h1>
 
-<div class='start-button-holder'>
-  <button ng-click="ticTacToe.startOver()">Start again</button>
-</div>
+<div class='page-wrapper'>
+
+  <h1>TicTacToe</h1>
+
+  <div class='start-button-holder'>
+    <button ng-click="ticTacToe.startOver()">Start again</button>
+  </div>
 
 
-<div class ="grid-container">
+  <div class ="grid-container">
 
-  <div ng-repeat="i in ticTacToe.getNumber(9) track by $index" class='cell' id="$index" ng-click="ticTacToe.assignMove($index)">
-      <p ng-if="ticTacToe.xMoves.indexOf($index)!==-1">x</p>
-      <p ng-if="ticTacToe.oMoves.indexOf($index)!==-1">o</p>
+    <div ng-repeat="i in ticTacToe.getNumber(9) track by $index" class='cell' id="$index" ng-click="ticTacToe.assignMove($index)">
+        <p ng-if="ticTacToe.xMoves.indexOf($index)!==-1">x</p>
+        <p ng-if="ticTacToe.oMoves.indexOf($index)!==-1">o</p>
+    </div>
+
+  </div>
+
+  <div class="results-box">
+    <p ng-if="ticTacToe.checkWin(ticTacToe.xMoves)===true">
+      X WINS!
+    </p>
+    <p ng-if="ticTacToe.checkWin(ticTacToe.oMoves)===true">
+      O WINS!
+    </p>
   </div>
 
 </div>
-
-<div class="results-box">
-  <p ng-if="ticTacToe.checkWin(ticTacToe.xMoves)===true">
-    X WINS!
-  </p>
-  <p ng-if="ticTacToe.checkWin(ticTacToe.oMoves)===true">
-    O WINS!
-  </p>
-</div>
   
+
 </body>
 </html>
